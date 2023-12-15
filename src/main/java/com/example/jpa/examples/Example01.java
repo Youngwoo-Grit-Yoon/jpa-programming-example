@@ -29,10 +29,9 @@ public class Example01 {
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
-        } finally {
-            em.close();
         }
 
+        em.close();
         emf.close();
     }
 
