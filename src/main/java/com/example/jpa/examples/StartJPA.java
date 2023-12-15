@@ -12,10 +12,10 @@ import java.util.List;
 
 /**
  * Spring Boot를 사용하면 persistence.xml 파일을 사용할 수 없으므로 @PersistenceUnit을 이용하여 EntityManagerFactory 의존성을 주입한다.
- * Example01 클래스를 Bean으로 등록하고 @Autowired를 이용하여 사용한다.
+ * StartJPA 클래스를 Bean으로 등록하고 @Autowired를 이용하여 사용한다.
  */
 @Component
-public class Example01 {
+public class StartJPA {
     @PersistenceUnit
     private EntityManagerFactory emf;
 
