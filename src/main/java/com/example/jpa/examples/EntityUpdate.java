@@ -23,5 +23,19 @@ public class EntityUpdate {
         agent.setDescription("주인선의 현재 남자친구이자 미래의 든든한 남편");
 
         tx.commit();  // 트랜잭션 커밋
+
+        Agent newAgent = new Agent();
+        newAgent.setId("id3");
+        newAgent.setUsername("홍길동");
+        newAgent.setAge(52);
+
+        tx.begin();
+        em.persist(newAgent);
+        tx.commit();
+
+        tx.begin();
+        // 영속 엔티티 삭제
+        em.remove(newAgent);
+        tx.commit();
     }
 }
