@@ -1,8 +1,6 @@
 package com.example.jpa;
 
-import com.example.jpa.examples.EntityUpdate;
-import com.example.jpa.examples.StartJPA;
-import com.example.jpa.examples.EntityPersist;
+import com.example.jpa.examples.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +15,14 @@ public class JpaApplication {
 	EntityPersist entityPersist;
 	@Autowired
 	EntityUpdate entityUpdate;
+	@Autowired
+	Detach detach;
+	@Autowired
+	Clear clear;
+	@Autowired
+	Close close;
+	@Autowired
+	Merge merge;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaApplication.class, args);
@@ -25,7 +31,7 @@ public class JpaApplication {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			entityUpdate.run();
+			merge.run();
 		};
 	}
 }
