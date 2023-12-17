@@ -7,6 +7,9 @@ import jakarta.persistence.EntityTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * 병합(Merge)은 save or update 기능을 수행한다.
+ */
 @Component
 public class Merge {
     @Autowired
@@ -36,7 +39,6 @@ public class Merge {
         tx2.begin();
 
         Agent mergeAgent = em2.merge(agent);
-        mergeAgent.setDescription("인선이와 영우의 사랑스런 주니어");
 
         tx2.commit();
         em2.close();
