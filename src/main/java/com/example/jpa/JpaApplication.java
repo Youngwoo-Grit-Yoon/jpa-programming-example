@@ -23,6 +23,8 @@ public class JpaApplication {
 	Close close;
 	@Autowired
 	Merge merge;
+	@Autowired
+	IdentityStrategy identityStrategy;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaApplication.class, args);
@@ -31,7 +33,7 @@ public class JpaApplication {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			merge.run();
+			identityStrategy.run();
 		};
 	}
 }
